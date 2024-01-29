@@ -9,14 +9,11 @@ const UserRegister = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [response, setResponse] = useState('');
-
+ 
     return (
-        <div className='container'>
             <div className='register-form'>
                 <h2>Sign up</h2>
 
-                <form>
                     <div className='box-user'>
                         <label htmlFor="register-name">Name</label>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
@@ -32,12 +29,10 @@ const UserRegister = () => {
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
 
-                    <Button type='button' onClick={userRegister} variant='outlined' size='large'>Sign Up</Button>
-                </form>
+                    <Button type='button' onClick={() => userRegister(name, email, password)} variant='outlined' size='large'>
+                        Sign Up
+                    </Button>
             </div>
-
-            <div id='response'>{response}</div>
-        </div>
     );
 }
 
