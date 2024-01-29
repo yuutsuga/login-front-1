@@ -1,5 +1,7 @@
+console.log(process.env.NEXT_PUBLIC_API_URL)
+
 const request = (url: string, method: string = "POST", body?: object) => {
-    return fetch(`${process.env.PORT}${url}`, {
+    return fetch(`${process.env.NEXT_PUBLIC_API_URL}${url}`, {
         method,
         body: JSON.stringify(body),
         headers: {
@@ -8,10 +10,10 @@ const request = (url: string, method: string = "POST", body?: object) => {
     });
 }
 
-export const userRegister = () => {
-    return request('/register');
+export const userRegister = (name: string, email: string, password: string) => {
+    return request(`/register`, "POST", {name, email, password});
 }
 
-export const userLogin = () => {
-    return request('/login');
+export const userLogin = (email: string, password: string) => {
+    return request('/login', "POST", {email, password});
 }
