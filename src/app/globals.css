@@ -1,7 +1,10 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
     min-height: 100hv;
-    box-sizing: border-box;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
