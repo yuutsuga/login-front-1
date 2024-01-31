@@ -10,8 +10,8 @@ const request = (url: string, method: string = "POST", body?: object) => {
     });
 }
 
-export const userRegister = (name: string, email: string, password: string) => {
-    return request(`/register`, "POST", {name, email, password});
+export const userRegister = (name: string, email: string, password: string, role: string) => {
+    return request(`/register`, "POST", {name, email, password, role});
 }
 
 export const userLogin = (email: string, password: string) => {

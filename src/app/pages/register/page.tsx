@@ -9,6 +9,7 @@ const UserRegister = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
  
     return (
             <div className='register-form'>
@@ -29,7 +30,12 @@ const UserRegister = () => {
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
 
-                    <Button type='button' onClick={() => userRegister(name, email, password)} variant='outlined' size='large'>
+                    <div className='box-user'>
+                        <label htmlFor="register-role">Role</label>
+                        <input type="text" value={role} onChange={(e) => setRole(e.target.value)} placeholder='User or Admin' required />
+                    </div>
+
+                    <Button type='button' onClick={() => userRegister(name, email, password, role)} variant='outlined' size='large'>
                         Sign Up
                     </Button>
             </div>
